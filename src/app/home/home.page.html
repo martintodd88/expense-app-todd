@@ -1,0 +1,52 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title >
+      LAET Todd Expense App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-item>
+    <ion-label >Total expenses: £ {{Totalmoney*-1}}
+
+    </ion-label>
+    <ion-input  readonly type="number"></ion-input>
+  </ion-item>
+
+  
+<ion-button expand="block" (click)="updateTotal(input1.value)"(click)="photoService.addNewToGallery(input1.value)"  color="success">Add Expense</ion-button>
+  
+ 
+ 
+
+  
+  <ion-item>
+    <ion-label >Expense Amount: £</ion-label>
+    <ion-input placeholder="Enter Input" #input1 type="number" ></ion-input>
+  </ion-item>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Photo Gallery</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+    <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+      <ion-img [src]="photo.webviewPath" ></ion-img>
+      <ion-label>Timestamp: {{photo.timestamp}}</ion-label>
+      <ion-label>----Amount:£ {{photo.amount}}</ion-label>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    
+  </ion-item>
+
+
+  
+</ion-content>
